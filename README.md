@@ -218,7 +218,7 @@ python predict.py "http://malicious.tk/login" ; echo $?
 
 ```bash
 # Predict endpoint
-curl -X POST http://localhost:5000/predict \
+curl -X POST http://localhost:5180/predict \
   -H "Content-Type: application/json" \
   -d '{"url": "http://paypa1-secure-verify.tk/login"}'
 ```
@@ -368,8 +368,8 @@ docker run -d \
 
 # With environment variables
 docker run -d \
-  -p 5000:5000 \
-  -e PORT=5000 \
+  -p 5180:5180 \
+  -e PORT=5180 \
   -e FLASK_DEBUG=false \
   --name phishguard \
   phishguard:latest
@@ -379,14 +379,14 @@ docker run -d \
 
 ```bash
 pip install gunicorn
-gunicorn --bind 0.0.0.0:5000 --workers 4 --timeout 60 app:app
+gunicorn --bind 0.0.0.0:5180 --workers 4 --timeout 60 app:app
 ```
 
 ### Environment Variables
 
 | Variable | Default | Description |
 |---|---|---|
-| `PORT` | `5000` | Flask server port |
+| `PORT` | `5180` | Flask server port |
 | `FLASK_DEBUG` | `false` | Enable debug mode |
 
 ---
