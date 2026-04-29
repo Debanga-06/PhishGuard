@@ -154,7 +154,7 @@ python train.py
 
 # 4. Launch the web app
 python app.py
-# → Open http://localhost:5000
+# → Open http://localhost:5180
 ```
 
 ### Option B: Docker
@@ -162,9 +162,9 @@ python app.py
 ```bash
 # Build and run (trains the model inside the container)
 docker build -t phishguard .
-docker run -p 5000:5000 phishguard
+docker run -p 5180:5180 phishguard
 
-# → Open http://localhost:5000
+# → Open http://localhost:5180
 ```
 
 ---
