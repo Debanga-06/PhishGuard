@@ -18,9 +18,9 @@ COPY . .
 RUN python train.py
 
 # Expose Flask port
-EXPOSE 5000
+EXPOSE 5180
 
 ENV FLASK_DEBUG=false
-ENV PORT=5000
+ENV PORT=5180
 
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "--timeout", "60", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5180", "--workers", "2", "--timeout", "60", "app:app"]
